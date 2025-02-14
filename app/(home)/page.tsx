@@ -1,13 +1,15 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: 'Home',
 }
 
-const URL = 'https://nomad-movies.nomadcoders.workers.dev/movies';
+export const API_URL = 'https://nomad-movies.nomadcoders.workers.dev/movies';
 
 async function getMovies() {
-  return fetch(URL).then(response => response.json());
+  const res = await fetch(`${API_URL}`);
+  return await res.json();
 }
 
 export default async function HomePage() {
@@ -15,7 +17,11 @@ export default async function HomePage() {
 
   return (
     <div>
-      {JSON.stringify(movies)}
+      {movies.map((movie) => (
+        <li key={movie.id}>
+          <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
+        </li>
+      ))}
     </div>
   );
 }
