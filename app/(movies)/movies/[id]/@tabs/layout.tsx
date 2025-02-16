@@ -1,8 +1,8 @@
-import Tabs from "./page";
+import MovieTabs from "../../../../../components/movie-tabs";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-    return <div>
+export default function Layout({ children, params }: { children: React.ReactNode, params: { id: string } }) {
+    return (<div>
+        <MovieTabs id={params.id} />
         {children}
-        <Tabs />
-    </div>
+    </div>)
 }
