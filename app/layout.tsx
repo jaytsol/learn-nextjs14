@@ -1,6 +1,6 @@
 import '../styles/global.css'
 import { Metadata } from "next"
-import Navigation from "../components/navagation"
+import Navigation from "../components/navigation"
 
 export const metadata: Metadata = {
   title: {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function Layout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
 }) {
   return (
     <html lang="en">

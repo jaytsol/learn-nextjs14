@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "app/(movies)/movies/[id]/@tabs/default.tsx"  ],
   "exclude": [
     "node_modules"
   ]
