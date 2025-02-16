@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import MovieInfo, { getMovie } from "../../../../components/movie-info";
-import MovieVideos from "../../../../components/movie-videos";
+import Tabs from "./@tabs/page";
 
 type IParams = Promise<{
   id: string;
@@ -20,8 +20,6 @@ export default async function MovieDetailPage(props: { params: IParams }) {
     <Suspense fallback={<div>Loading movie info...</div>}>
       <MovieInfo id={params.id} />
     </Suspense>
-    <Suspense fallback={<div>Loading videos...</div>}>
-      <MovieVideos id={params.id} />
-    </Suspense>
+    <Tabs />
   </div>
 }
